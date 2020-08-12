@@ -7,7 +7,8 @@ export async function up(knex: Knex) {
             .references('id')
             .inTable('users')
             .onUpdate('CASCADE')
-            .onDelete('CASCADE');
+            .onDelete('CASCADE')
+            .primary();
 
         table.string('avatar').notNullable();
         table.string('whatsapp').notNullable();
